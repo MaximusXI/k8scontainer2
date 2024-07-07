@@ -10,6 +10,13 @@ steps:
     args: ['build', '-t', 'us-central1-docker.pkg.dev/assignment3-428215/k8srepository/container2', '.']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'us-central1-docker.pkg.dev/assignment3-428215/k8srepository/container2']
+  - name: "gcr.io/cloud-builders/gke-deploy"
+    args:
+      - run
+      - --filename=./deployment2.yml
+      - --filename=./service2.yml
+      - --location=us-central1-c
+      - --cluster=cluster-assignment-3
 options:
   logging: CLOUD_LOGGING_ONLY
 
