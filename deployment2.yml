@@ -14,9 +14,15 @@ spec:
     spec:
       containers:
       - name: container2
-        image: harshil1996/fileservice:latest
+        image: us-central1-docker.pkg.dev/assignment3-428215/k8srepository/container2
         imagePullPolicy: Always
         ports:
           - containerPort: 7000
-            
+        volumeMounts:
+          - name: data-volume
+            mountPath: /harshil_PV_dir
+      volumes:
+        - name: data-volume
+          persistentVolumeClaim:
+            claimName: host-pvc
 
