@@ -56,6 +56,7 @@ public class FileUtility {
             log.error("Exception occurred: {}",e.getMessage());
             throw new Exception(e.getMessage());
         }
+        log.info("Calculated the total to: {}",total);
         return total;
     }
 }
