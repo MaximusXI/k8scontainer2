@@ -24,7 +24,7 @@ public class fileParseController {
     @PostMapping("/welcome")
     public ResponseEntity<Response> getFileData(@RequestBody Request request) throws Exception {
         //System.out.println("The controller:"+request.getFile());
-        log.info("A simple log");
+        log.info("A simple log 2");
         log.info("Inside the FileParseController with request: {}",request);
         int sum = FileUtility.fetchFileData(request.getFile(), request.getProduct(),fileLocation);
         Response response = new Response();
